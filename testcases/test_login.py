@@ -12,10 +12,13 @@ class Test_001_Login:
         self.driver = setup
         self.driver.get(self.baseURL)
         actual_title = self.driver.title
-        self.driver.close()
-        if actual_title == "Google":
+       # self.driver.close()
+        if actual_title == "Swag Labs1212":
             assert True
+            self.driver.close()
         else:
+            self.driver.save_screenshot("./Screenshots/loginTest.png")
+            self.driver.close()
             assert False
 
     def test_login(self, setup):
